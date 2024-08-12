@@ -2,32 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 286 38% 100%;
+    --foreground: 286 71% 4%;
+    --muted: 286 26% 91%;
+    --muted-foreground: 286 5% 27%;
+    --popover: 286 38% 100%;
+    --popover-foreground: 286 71% 4%;
+    --card: 286 38% 100%;
+    --card-foreground: 286 71% 4%;
+    --border: 286 3% 91%;
+    --input: 286 3% 91%;
+    --primary: 286 48% 62%;
+    --primary-foreground: 286 48% 2%;
+    --secondary: 286 12% 89%;
+    --secondary-foreground: 286 12% 29%;
+    --accent: 286 18% 82%;
+    --accent-foreground: 286 18% 22%;
+    --destructive: 12 80% 30%;
+    --destructive-foreground: 12 80% 90%;
+    --ring: 286 48% 62%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 338.69 32.56% 0.58%;
+    --foreground: 286 22% 99%;
+    --muted: 286 26% 9%;
+    --muted-foreground: 286 5% 73%;
+    --popover: 286 31% 1%;
+    --popover-foreground: 286 22% 99%;
+    --card: 286 31% 1%;
+    --card-foreground: 286 22% 99%;
+    --border: 286 3% 11%;
+    --input: 286 3% 11%;
+    --primary: 338.69 100% 58.04%;
+    --primary-foreground: 286 0% 100%;
+    --secondary: 338.69 58.33% 34.49%;
+    --secondary-foreground: 286 0% 100%;
+    --accent: 338.82 39.02% 39.28%;
+    --accent-foreground: 286 26% 90%;
+    --destructive: 106.42 80% 54%;
+    --destructive-foreground: 0 0% 0%;
+    --ring: 338.69 100% 58.04%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
