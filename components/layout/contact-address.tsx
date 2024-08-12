@@ -38,15 +38,24 @@ export const ContactAddress = () => {
           objectPosition="50% 50%"
         />
         <div className="flex flex-col gap-2">
-          <div className="text-base sm:text-xl items-center flex gap-2 text-primary">
+          <div className="flex items-center gap-2 text-primary">
             <MapPinIcon />
-            <a href="https://maps.app.goo.gl/qQDRfG9KgYtwrn8W8" target="_blank">
+            <a
+              className="text-base sm:text-xl"
+              href="https://maps.app.goo.gl/qQDRfG9KgYtwrn8W8"
+              target="_blank"
+            >
               Jesenická poliklinika s.r.o. Dukelská 456/13 790 01 Jeseník
             </a>
           </div>
-          <div className="text-base sm:text-xl flex gap-2 text-primary">
+          <div className="flex items-center gap-2 text-primary">
             <MailIcon />
-            <a href="mailto:someone@example.com">someone@example.com</a>
+            <a
+              className="text-base sm:text-xl"
+              href="mailto:someone@example.com"
+            >
+              someone@example.com
+            </a>
           </div>
         </div>
         <iframe
@@ -76,13 +85,18 @@ export const ContactAddress = () => {
           objectPosition="50% 50%"
         />
         <div className="flex flex-col gap-2">
-          <div className="text-base sm:text-xl items-center flex gap-2 text-primary">
+          <div className="flex items-center gap-2 text-primary">
             <PhoneIcon />
             <a href="tel:+420 602 588 541">+420 602 588 541</a>
           </div>
-          <div className="text-base sm:text-xl flex gap-2 text-primary">
+          <div className="flex items-center gap-2 text-primary">
             <MailIcon />
-            <a href="mailto:someone@example.com">someone@example.com</a>
+            <a
+              className="text-base sm:text-xl"
+              href="mailto:someone@example.com"
+            >
+              someone@example.com
+            </a>
           </div>
         </div>
       </BackgroundGradient>
@@ -103,15 +117,24 @@ export const ContactAddress = () => {
           objectPosition="50% 50%"
         />
         <div className="flex flex-col gap-2">
-          <div className="text-base sm:text-xl items-center flex gap-2 text-primary">
+          <div className="flex items-center gap-2 text-primary">
             <MapPinIcon />
-            <a href="https://maps.app.goo.gl/qQDRfG9KgYtwrn8W8" target="_blank">
+            <a
+              className="text-base sm:text-xl"
+              href="https://maps.app.goo.gl/qQDRfG9KgYtwrn8W8"
+              target="_blank"
+            >
               Hotel Koruna Revoluční 141/2 79001 Jeseník
             </a>
           </div>
-          <div className="text-base sm:text-xl flex gap-2 text-primary">
+          <div className="flex items-center gap-2 text-primary">
             <MailIcon />
-            <a href="mailto:someone@example.com">someone@example.com</a>
+            <a
+              className="text-base sm:text-xl"
+              href="mailto:someone@example.com"
+            >
+              someone@example.com
+            </a>
           </div>
         </div>
         <iframe
