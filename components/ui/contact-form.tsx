@@ -2,10 +2,8 @@
 
 import { useEffect, useState } from "react"
 import { z } from "zod"
-import { useWindowSize } from "react-use"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { toast } from "sonner"
-import Confetti from "react-confetti"
 import {
   Form,
   FormControl,
@@ -34,14 +32,13 @@ const formSchema = z.object({
 })
 
 export const ContactForm = () => {
-  const [showConfetti, setShowConfetti] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const { width, height } = useWindowSize()
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      access_key: process.env.NEXT_PUBLIC_WEB3_FORM,
+      access_key: "05118227-c481-4f67-8882-aab298c4f9a9",
+      // process.env.NEXT_PUBLIC_WEB3_FORM,
       jmeno_prijmeni: "",
       email: "",
       telefon: "",
@@ -51,8 +48,11 @@ export const ContactForm = () => {
 
   const { reset } = form
 
+  useEffect(() => {
+    toast.success("Děkujeme za potvrzení!")
+  }, [])
+
   async function onSubmit(data: z.infer<typeof formSchema>) {
-    console.log("🚀 ~ onSubmit ~ data:", data)
     setIsLoading(true)
 
     await fetch("https://api.web3forms.com/submit", {
@@ -66,8 +66,7 @@ export const ContactForm = () => {
       .then(async (response) => {
         const json = await response.json()
         if (json.success) {
-          toast.success("Děkujeme za potvrzení!")
-          setShowConfetti(true)
+          toast.success("Děkuji za zprávu!")
           reset()
         }
       })
@@ -80,18 +79,14 @@ export const ContactForm = () => {
       })
   }
 
-  useEffect(() => {
-    if (showConfetti) {
-      const timer = setTimeout(() => {
-        setShowConfetti(false)
-      }, 10_000)
-
-      return () => clearTimeout(timer)
-    }
-  }, [showConfetti])
-
   return (
-    <div className="self-center relative bg-primary/50 p-10 rounded-xl w-full lg:max-w-[850px]">
+    <div
+      style={{
+        background:
+          "linear-gradient(180deg, var(--fuchsia-100), var(--fuchsia-200)",
+      }}
+      className="self-center relative p-10 rounded-xl w-full lg:max-w-[850px]"
+    >
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -102,8 +97,10 @@ export const ContactForm = () => {
               control={form.control}
               name="jmeno_prijmeni"
               render={({ field }) => (
-                <FormItem className="flex flex-col items-start gap-4 rounded-md border p-4">
-                  <FormLabel>Jméno a příjmení</FormLabel>
+                <FormItem className="flex flex-col items-start gap-4 rounded-md border border-primary p-4">
+                  <FormLabel className="text-primary">
+                    Jméno a příjmení
+                  </FormLabel>
                   <FormControl>
                     <Input
                       className="text-blue"
@@ -119,8 +116,8 @@ export const ContactForm = () => {
               control={form.control}
               name="email"
               render={({ field }) => (
-                <FormItem className="flex flex-col items-start gap-4 rounded-md border p-4">
-                  <FormLabel>Email</FormLabel>
+                <FormItem className="flex border-primary flex-col items-start gap-4 rounded-md border p-4">
+                  <FormLabel className="text-primary">Email</FormLabel>
                   <FormControl>
                     <Input
                       className="text-blue"
@@ -132,13 +129,12 @@ export const ContactForm = () => {
                 </FormItem>
               )}
             />
-
             <FormField
               control={form.control}
               name="telefon"
               render={({ field }) => (
-                <FormItem className="flex flex-col items-start gap-4 rounded-md border p-4">
-                  <FormLabel>Telefon</FormLabel>
+                <FormItem className="flex border-primary flex-col items-start gap-4 rounded-md border p-4">
+                  <FormLabel className="text-primary">Telefon</FormLabel>
                   <FormControl>
                     <Input
                       className="text-blue"
@@ -150,13 +146,12 @@ export const ContactForm = () => {
                 </FormItem>
               )}
             />
-
             <FormField
               control={form.control}
               name="poznamka"
               render={({ field }) => (
-                <FormItem className="flex flex-col items-start gap-4 rounded-md border p-4">
-                  <FormLabel>Poznámka</FormLabel>
+                <FormItem className="flex border-primary flex-col items-start gap-4 rounded-md border p-4">
+                  <FormLabel className="text-primary">Poznámka</FormLabel>
                   <FormControl>
                     <Textarea
                       className="text-blue"
@@ -172,14 +167,13 @@ export const ContactForm = () => {
             {isLoading ? (
               <Spinner />
             ) : (
-              <div className="flex items-center gap-8">
+              <div className="flex text-white items-center gap-8">
                 Odeslat <MailIcon />
               </div>
             )}
           </Button>
         </form>
       </Form>
-      {showConfetti && <Confetti width={width} height={height} />}
     </div>
   )
 }
