@@ -41,8 +41,7 @@ export const ContactForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      access_key: "05118227-c481-4f67-8882-aab298c4f9a9",
-      // process.env.NEXT_PUBLIC_WEB3_FORM,
+      access_key: process.env.NEXT_PUBLIC_WEB3_FORM,
       jmeno_prijmeni: "",
       email: "",
       telefon: "",
