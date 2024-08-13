@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { toast } from "sonner"
@@ -47,10 +47,6 @@ export const ContactForm = () => {
 
   const { reset } = form
 
-  useEffect(() => {
-    toast.success("Děkujeme za potvrzení!")
-  }, [])
-
   async function onSubmit(data: z.infer<typeof formSchema>) {
     setIsLoading(true)
 
@@ -84,8 +80,9 @@ export const ContactForm = () => {
         background:
           "linear-gradient(180deg, var(--fuchsia-100), var(--fuchsia-200)",
       }}
-      className="self-center relative p-10 rounded-xl w-full lg:max-w-[850px]"
+      className="self-center flex flex-col items-center gap-8 relative p-10 rounded-xl w-full lg:max-w-[850px]"
     >
+      <div className="text-primary font-bold text-3xl">Kontaktní formulář</div>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}

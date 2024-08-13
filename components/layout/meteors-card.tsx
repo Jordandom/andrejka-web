@@ -51,7 +51,7 @@ export function MeteorsCard() {
             {card.quotes.map((quote, idx) => (
               <h1
                 key={idx}
-                className="font-bold text-xl text-primary mb-4 relative z-50"
+                className="font-bold text-xl text-primary mb-4 relative z-10"
               >
                 {quote}
               </h1>

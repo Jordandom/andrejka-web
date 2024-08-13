@@ -4,20 +4,6 @@ import { BackgroundGradient } from "@/components/ui/background-gradient"
 import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react"
 import Image from "next/image"
 
-const cardData = [
-  {
-    title: "Andrea Heckelová",
-    image: "/images/mandala.webp",
-    phone: "+420 602 588 541",
-    email: "email",
-  },
-  {
-    title: "Meditárna",
-    image: "/images/meditarna.webp",
-    address: "Dukelská 456/13, 790 01 Jeseník",
-  },
-]
-
 export const ContactAddress = () => {
   return (
     <div className="self-center gap-4 grid grid-cols-1 xl:grid-cols-3 mx-auto px-10 w-full">
@@ -46,15 +32,6 @@ export const ContactAddress = () => {
               target="_blank"
             >
               Jesenická poliklinika s.r.o. Dukelská 456/13 790 01 Jeseník
-            </a>
-          </div>
-          <div className="flex items-center gap-2 text-primary">
-            <MailIcon />
-            <a
-              className="text-base sm:text-xl"
-              href="mailto:someone@example.com"
-            >
-              someone@example.com
             </a>
           </div>
         </div>
@@ -93,9 +70,9 @@ export const ContactAddress = () => {
             <MailIcon />
             <a
               className="text-base sm:text-xl"
-              href="mailto:someone@example.com"
+              href="mailto:andrea.heckelova@email.cz"
             >
-              someone@example.com
+              andrea.heckelova@email.cz
             </a>
           </div>
         </div>
@@ -125,15 +102,6 @@ export const ContactAddress = () => {
               target="_blank"
             >
               Hotel Koruna Revoluční 141/2 79001 Jeseník
-            </a>
-          </div>
-          <div className="flex items-center gap-2 text-primary">
-            <MailIcon />
-            <a
-              className="text-base sm:text-xl"
-              href="mailto:someone@example.com"
-            >
-              someone@example.com
             </a>
           </div>
         </div>
