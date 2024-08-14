@@ -44,7 +44,7 @@ export const ContactAddress = () => {
         containerClassName="w-full self-start"
         className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900 flex gap-8 flex-col"
       >
-        <div className="self-center font-bold text-base sm:text-3xl text-primary">
+        <div className="self-center font-bold text-3xl text-primary">
           Andrea Heckelová
         </div>
         <Image
@@ -78,7 +78,7 @@ export const ContactAddress = () => {
             containerClassName="w-full self-start"
             className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900 flex gap-8 flex-col"
           >
-            <div className="self-center flex flex-col items-center font-bold text-base sm:text-3xl text-primary">
+            <div className="self-center flex flex-col items-center font-bold text-3xl text-primary">
               <div>{location.title}</div>
               <div>{location.subtitle}</div>
             </div>
