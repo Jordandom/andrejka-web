@@ -58,13 +58,13 @@ export const ContactAddress = () => {
         />
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2 text-primary">
-            <PhoneIcon />
+            <PhoneIcon className="flex-shrink-0" />
             <a className="text-xl" href="tel:+420 602 588 541">
               +420 602 588 541
             </a>
           </div>
           <div className="flex items-center gap-2 text-primary">
-            <MailIcon />
+            <MailIcon className="flex-shrink-0" />
             <a className="text-xl" href="mailto:andrea.heckelova@email.cz">
               andrea.heckelova@email.cz
             </a>
@@ -93,7 +93,7 @@ export const ContactAddress = () => {
             />
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2 text-primary">
-                <MapPinIcon />
+                <MapPinIcon className="flex-shrink-0" />
                 <a className="text-xl" href={location.mapLink} target="_blank">
                   {location.address}
                 </a>
