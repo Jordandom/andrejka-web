@@ -75,101 +75,105 @@ export const ContactForm = () => {
   }
 
   return (
-    <div
-      style={{
-        background:
-          "linear-gradient(180deg, var(--fuchsia-100), var(--fuchsia-200)",
-      }}
-      className="self-center flex flex-col items-center gap-8 relative p-10 rounded-xl w-full lg:max-w-[850px]"
-    >
-      <div className="text-primary font-bold text-3xl">Kontaktní formulář</div>
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="flex w-full flex-col items-stretch gap-8"
-        >
-          <div className="flex flex-col items-stretch gap-4">
-            <FormField
-              control={form.control}
-              name="jmeno_prijmeni"
-              render={({ field }) => (
-                <FormItem className="flex flex-col items-start gap-4 rounded-md border border-primary p-4">
-                  <FormLabel className="text-primary">
-                    Jméno a příjmení
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      className="text-blue"
-                      placeholder="Jméno a příjmení"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
+    <div className="self-center w-full px-2 lg:max-w-[850px]">
+      <div
+        style={{
+          background:
+            "linear-gradient(180deg, var(--fuchsia-100), var(--fuchsia-200)",
+        }}
+        className="flex w-full flex-col items-center gap-8 relative p-10 rounded-xl"
+      >
+        <div className="text-primary font-bold text-3xl">
+          Kontaktní formulář
+        </div>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="flex w-full flex-col items-stretch gap-8"
+          >
+            <div className="flex flex-col items-stretch gap-4">
+              <FormField
+                control={form.control}
+                name="jmeno_prijmeni"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col items-start gap-4 rounded-md border border-primary p-4">
+                    <FormLabel className="text-primary">
+                      Jméno a příjmení
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        className="text-blue"
+                        placeholder="Jméno a příjmení"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem className="flex border-primary flex-col items-start gap-4 rounded-md border p-4">
+                    <FormLabel className="text-primary">Email</FormLabel>
+                    <FormControl>
+                      <Input
+                        className="text-blue"
+                        placeholder="Email"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="telefon"
+                render={({ field }) => (
+                  <FormItem className="flex border-primary flex-col items-start gap-4 rounded-md border p-4">
+                    <FormLabel className="text-primary">Telefon</FormLabel>
+                    <FormControl>
+                      <Input
+                        className="text-blue"
+                        placeholder="Telefon"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="poznamka"
+                render={({ field }) => (
+                  <FormItem className="flex border-primary flex-col items-start gap-4 rounded-md border p-4">
+                    <FormLabel className="text-primary">Poznámka</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        className="text-blue"
+                        placeholder="Poznámka"
+                        {...field}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+            </div>
+            <Button className="text-2xl" variant="default" type="submit">
+              {isLoading ? (
+                <Spinner />
+              ) : (
+                <div className="flex text-white items-center gap-8">
+                  Odeslat <MailIcon />
+                </div>
               )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem className="flex border-primary flex-col items-start gap-4 rounded-md border p-4">
-                  <FormLabel className="text-primary">Email</FormLabel>
-                  <FormControl>
-                    <Input
-                      className="text-blue"
-                      placeholder="Email"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="telefon"
-              render={({ field }) => (
-                <FormItem className="flex border-primary flex-col items-start gap-4 rounded-md border p-4">
-                  <FormLabel className="text-primary">Telefon</FormLabel>
-                  <FormControl>
-                    <Input
-                      className="text-blue"
-                      placeholder="Telefon"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="poznamka"
-              render={({ field }) => (
-                <FormItem className="flex border-primary flex-col items-start gap-4 rounded-md border p-4">
-                  <FormLabel className="text-primary">Poznámka</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      className="text-blue"
-                      placeholder="Poznámka"
-                      {...field}
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-          </div>
-          <Button className="text-2xl" variant="default" type="submit">
-            {isLoading ? (
-              <Spinner />
-            ) : (
-              <div className="flex text-white items-center gap-8">
-                Odeslat <MailIcon />
-              </div>
-            )}
-          </Button>
-        </form>
-      </Form>
+            </Button>
+          </form>
+        </Form>
+      </div>
     </div>
   )
 }
