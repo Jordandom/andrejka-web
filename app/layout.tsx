@@ -2,6 +2,9 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { Toaster } from "sonner"
+import { AuroraBackground } from "@/components/layout/aurora-background"
+// import { Navbar } from "@/components/layout/navbar"
+import { cn } from "@/lib/utils"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -22,9 +25,12 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={inter.className}>
-        {children}
-        <Toaster position="top-center" richColors />
+      <body className={cn("h-screen flex flex-col", inter.className)}>
+        <AuroraBackground>
+          {/* <Navbar /> */}
+          {children}
+          <Toaster position="top-center" richColors />
+        </AuroraBackground>
       </body>
     </html>
   )

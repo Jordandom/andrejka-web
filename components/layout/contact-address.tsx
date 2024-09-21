@@ -18,8 +18,8 @@ const locations = [
   {
     title: "Individuální terapie",
     subtitle: "Praha",
-    imageSrc: "/images/ordinace-poliklinika.webp",
-    imageAlt: "Ordinace Poliklinika",
+    imageSrc: "/images/ordinace-praha.webp",
+    imageAlt: "Ordinace Praha",
     address: "Nušlova 2258/2, 158 00 Praha 13-Stodůlky",
     mapLink: "https://maps.app.goo.gl/2w1ETtWURDSLS2Ri7",
     mapEmbedSrc:
@@ -83,7 +83,7 @@ export const ContactAddress = () => {
               <div>{location.subtitle}</div>
             </div>
             <Image
-              className="self-center rounded-full"
+              className="self-center h-[200px] w-[200px] rounded-full"
               src={location.imageSrc}
               width={200}
               height={200}
