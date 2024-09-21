@@ -8,15 +8,15 @@ import { ContactAddress } from "@/components/layout/contact-address"
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between">
-      <AuroraBackground>
-        {/* TODO: */}
-        {/* <Navbar /> */}
-        <Aurora />
-        <MovingCards />
-        <MeteorsCard />
-        <ContactForm />
-        <ContactAddress />
-      </AuroraBackground>
+      <Aurora
+        className="mt-20"
+        heading="Regenerační centrum Harmonie"
+        subheading="Andrea Heckelová"
+      />
+      <MovingCards />
+      <MeteorsCard />
+      <ContactForm />
+      <ContactAddress />
     </main>
   )
 }
