@@ -44,7 +44,7 @@ export const ContactAddress = () => {
         containerClassName="w-full self-start"
         className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900 flex gap-8 flex-col"
       >
-        <div className="self-center font-bold text-3xl text-primary">
+        <div className="self-center font-bold text-3xl text-ring">
           Andrea Heckelová
         </div>
         <Image
@@ -57,13 +57,13 @@ export const ContactAddress = () => {
           objectPosition="50% 50%"
         />
         <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2 text-primary">
+          <div className="flex items-center gap-2 text-ring">
             <PhoneIcon className="flex-shrink-0" />
             <a className="text-xl" href="tel:+420 602 588 541">
               +420 602 588 541
             </a>
           </div>
-          <div className="flex items-center gap-2 text-primary">
+          <div className="flex items-center gap-2 text-ring">
             <MailIcon className="flex-shrink-0" />
             <a className="text-xl" href="mailto:andrea.heckelova@email.cz">
               andrea.heckelova@email.cz
@@ -76,9 +76,9 @@ export const ContactAddress = () => {
           <BackgroundGradient
             key={index}
             containerClassName="w-full self-start"
-            className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900 flex gap-8 flex-col"
+            className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900 flex gap-8 flex-col min-h-[984px]"
           >
-            <div className="self-center flex flex-col items-center font-bold text-3xl text-primary">
+            <div className="self-center flex flex-col items-center font-bold text-3xl text-ring">
               <div>{location.title}</div>
               <div>{location.subtitle}</div>
             </div>
@@ -92,7 +92,7 @@ export const ContactAddress = () => {
               objectPosition="50% 50%"
             />
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2 text-primary">
+              <div className="flex items-center gap-2 text-ring">
                 <MapPinIcon className="flex-shrink-0" />
                 <a className="text-xl" href={location.mapLink} target="_blank">
                   {location.address}

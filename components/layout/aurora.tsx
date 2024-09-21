@@ -24,7 +24,7 @@ export function Aurora({
       }}
       className={
         (cn(
-          "relative flex flex-col gap-4 items-center justify-center w-full px-4"
+          "relative  flex flex-col gap-4 items-center justify-center w-full px-4"
         ),
         className)
       }

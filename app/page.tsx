@@ -7,7 +7,7 @@ import { ContactAddress } from "@/components/layout/contact-address"
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between">
+    <main className="flex flex-col items-center justify-between gap-8">
       <Aurora
         className="mt-20"
         heading="Regenerační centrum Harmonie"
