@@ -74,6 +74,6 @@ const Noise = () => {
         backgroundImage: "url(/images/noise.webp)",
         backgroundSize: "30%",
       }}
-    ></div>
+    />
   )
 }

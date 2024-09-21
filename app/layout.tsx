@@ -3,8 +3,16 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { Toaster } from "sonner"
 import { AuroraBackground } from "@/components/layout/aurora-background"
-// import { Navbar } from "@/components/layout/navbar"
 import { cn } from "@/lib/utils"
+import { Navbar } from "@/components/layout/navbar"
+import {
+  IconBrandGithub,
+  IconBrandX,
+  IconExchange,
+  IconHome,
+  IconNewSection,
+  IconTerminal2,
+} from "@tabler/icons-react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -27,7 +35,7 @@ export default function RootLayout({
       </head>
       <body className={cn("h-screen flex flex-col", inter.className)}>
         <AuroraBackground>
-          {/* <Navbar /> */}
+          <Navbar />
           {children}
           <Toaster position="top-center" richColors />
         </AuroraBackground>

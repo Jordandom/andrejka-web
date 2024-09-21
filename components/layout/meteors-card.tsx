@@ -44,14 +44,14 @@ export function MeteorsCard() {
           <div
             style={{
               background:
-                "linear-gradient(180deg, var(--fuchsia-100), var(--fuchsia-200)",
+                "linear-gradient(180deg, var(--pink-100), var(--pink-200))",
             }}
             className="relative shadow-xl border px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col items-start"
           >
             {card.quotes.map((quote, idx) => (
               <h1
                 key={idx}
-                className="font-bold text-xl text-primary mb-4 relative z-10"
+                className="font-bold text-xl text-ring mb-4 relative z-10"
               >
                 {quote}
               </h1>

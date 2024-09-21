@@ -77,12 +77,11 @@ export const ContactForm = () => {
   return (
     <div
       style={{
-        background:
-          "linear-gradient(180deg, var(--fuchsia-100), var(--fuchsia-200)",
+        background: "linear-gradient(180deg, var(--pink-100), var(--pink-200))",
       }}
       className="flex self-center lg:max-w-[850px] w-full flex-col items-center gap-8 relative p-10 rounded-xl"
     >
-      <div className="text-primary font-bold text-3xl">Kontaktní formulář</div>
+      <div className="text-ring font-bold text-3xl">Kontaktní formulář</div>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -93,10 +92,8 @@ export const ContactForm = () => {
               control={form.control}
               name="jmeno_prijmeni"
               render={({ field }) => (
-                <FormItem className="flex flex-col items-start gap-4 rounded-md border border-primary p-4">
-                  <FormLabel className="text-primary">
-                    Jméno a příjmení
-                  </FormLabel>
+                <FormItem className="flex flex-col items-start gap-4 rounded-md border border-ring p-4">
+                  <FormLabel className="text-ring">Jméno a příjmení</FormLabel>
                   <FormControl>
                     <Input
                       className="text-blue"
@@ -112,8 +109,8 @@ export const ContactForm = () => {
               control={form.control}
               name="email"
               render={({ field }) => (
-                <FormItem className="flex border-primary flex-col items-start gap-4 rounded-md border p-4">
-                  <FormLabel className="text-primary">Email</FormLabel>
+                <FormItem className="flex border-ring flex-col items-start gap-4 rounded-md border p-4">
+                  <FormLabel className="text-ring">Email</FormLabel>
                   <FormControl>
                     <Input
                       className="text-blue"
@@ -129,8 +126,8 @@ export const ContactForm = () => {
               control={form.control}
               name="telefon"
               render={({ field }) => (
-                <FormItem className="flex border-primary flex-col items-start gap-4 rounded-md border p-4">
-                  <FormLabel className="text-primary">Telefon</FormLabel>
+                <FormItem className="flex border-ring flex-col items-start gap-4 rounded-md border p-4">
+                  <FormLabel className="text-ring">Telefon</FormLabel>
                   <FormControl>
                     <Input
                       className="text-blue"
@@ -146,8 +143,8 @@ export const ContactForm = () => {
               control={form.control}
               name="poznamka"
               render={({ field }) => (
-                <FormItem className="flex border-primary flex-col items-start gap-4 rounded-md border p-4">
-                  <FormLabel className="text-primary">Poznámka</FormLabel>
+                <FormItem className="flex border-ring flex-col items-start gap-4 rounded-md border p-4">
+                  <FormLabel className="text-ring">Poznámka</FormLabel>
                   <FormControl>
                     <Textarea
                       className="text-blue"
